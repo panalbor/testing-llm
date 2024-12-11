@@ -3,6 +3,7 @@ import random
 import pandas as pd
 import os
 import gspread
+import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Define scopes for Google Sheets API
