@@ -8,9 +8,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Define scopes for Google Sheets API
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-# Load service account credentials
-SERVICE_ACCOUNT_FILE = "credentials.json"  # Replace with your JSON file path
-credentials = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_ACCOUNT_FILE, SCOPES)
+# Load service account credentials from Streamlit Secrets
+credentials_json = st.secrets["GCP_CREDENTIALS"]  # Loaded as a dictionary
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(credentials_json), SCOPES)
 
 # Authorize and connect to Google Sheets
 gc = gspread.authorize(credentials)
