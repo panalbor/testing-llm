@@ -65,7 +65,7 @@ selected_context = st.session_state["selected_context"]
 
 # Streamlit app layout
 st.title("Task: suggest a question")
-st.subheader("Instruction: For the given context suggest the question.")
+st.subheader("Instruction: For the given context suggest the question")
 
 # Display the random context
 st.write(f"**Context:** {selected_context['context']}")
